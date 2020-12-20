@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+         #
+#    By: kali <kali@student.42lyon.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 11:11:01 by agardet           #+#    #+#              #
-#    Updated: 2020/11/27 20:39:31 by agardet          ###   ########lyon.fr    #
+#    Updated: 2020/12/08 13:54:28 by kali             ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,10 +54,10 @@ ${NAME}:	${OBJS}
 			ar -rc ${NAME} ${OBJS}
 			ranlib ${NAME}
 
-HEADER = libft.h
+HEADER = $(includes)
 
 %.o:		%.c
-			gcc ${FLAGS} -I ${HEADER} -o $@ -c $<
+			gcc ${FLAGS} -I./includes ${HEADER} -o $@ -c $<
 
 all:
 			${NAME}
