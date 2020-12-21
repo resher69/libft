@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/08 13:51:26 by kali              #+#    #+#             */
-/*   Updated: 2020/12/21 15:54:46 by agardet          ###   ########lyon.fr   */
+/*   Created: 2020/12/21 12:58:22 by agardet           #+#    #+#             */
+/*   Updated: 2020/12/21 17:08:03 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	j;
-	char	*str;
+	unsigned int	begin;
+	unsigned int	i;
+	size_t			end;
+	char			*result;
 
-	if (!s)
+	if (!s1 || !set)
 		return (NULL);
-	str = (char*)malloc(sizeof(*s) * (len + 1));
-	if (!str)
-		return (NULL);
+	begin = 0;
 	i = 0;
-	j = 0;
-	while (s[i])
+	while (s1[begin] != '\0' && ft_strchr(set, s1[begin]))
+		begin++;
+	end = ft_strlen(s1);
+	while (end != begin && ft_strchr(set, s1[end]))
+		end--;
+	if (!(result = ft_calloc(((end - begin) + 2), sizeof(char))))
+		return (NULL);
+	while (begin <= end)
 	{
-		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
+		result[i] = s1[begin];
+		begin++;
 		i++;
 	}
-	str[j] = 0;
-	return (str);
+	return (result);
 }
-

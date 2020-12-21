@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kali <kali@student.42lyon.fr>              +#+  +:+       +#+         #
+#    By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 11:11:01 by agardet           #+#    #+#              #
-#    Updated: 2020/12/08 13:54:28 by kali             ###   ########lyon.fr    #
+#    Updated: 2020/12/21 15:53:41 by agardet          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,32 +41,40 @@ SRCS	=	ft_memset.c\
 			ft_putchar_fd.c\
 			ft_putstr_fd.c\
 			ft_putendl_fd.c\
-			ft_putnbr_fd.c
+			ft_putnbr_fd.c\
+			ft_substr.c\
+			ft_strtrim.c\
+			\
+			ft_lstadd_back.c\
+			ft_lstadd_front.c\
+			ft_lstdelone.c\
+			ft_lstlast.c\
+			ft_lstnew.c\
+			ft_lstsize.c\
 
 
-OBJS	=	${SRCS:.c=.o}
+OBJS	=	$(SRCS:.c=.o)
 
 FLAGS	=	-Wall -Wextra -Werror
 
 NAME	=	libft.a
 
-${NAME}:	${OBJS}
-			ar -rc ${NAME} ${OBJS}
-			ranlib ${NAME}
+$(NAME):	$(OBJS)
+			ar -rc $(NAME) $(OBJS)
+			ranlib $(NAME)
 
-HEADER = $(includes)
+HEADER = libft.h
 
 %.o:		%.c
-			gcc ${FLAGS} -I./includes ${HEADER} -o $@ -c $<
+			gcc $(FLAGS) -I $(HEADER) -o $@ -c $<
 
-all:
-			${NAME}
+all:		$(NAME)
 
 clean:
-			rm -f ${OBJS}
+			rm -f $(OBJS)
 
 fclean:		clean
-			rm -f ${NAME}
+			rm -f $(NAME)
 
 re:			fclean all
 

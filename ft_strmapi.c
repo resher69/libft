@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/27 20:33:51 by agardet           #+#    #+#             */
-/*   Updated: 2020/12/21 13:01:57 by agardet          ###   ########lyon.fr   */
+/*   Created: 2020/12/21 16:54:38 by agardet           #+#    #+#             */
+/*   Updated: 2020/12/21 17:14:50 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void ft_putendl_fd(char *s, int fd)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (s)
-		write(fd, s, ft_strlen(s));
-		write(fd, "\n", 1);
+	
 }

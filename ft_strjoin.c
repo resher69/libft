@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 20:07:18 by agardet           #+#    #+#             */
-/*   Updated: 2020/11/27 20:25:46 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/21 13:02:58 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	total_len;
 	char	*res;
 
+	if (!s1 || !s2)
+		return (NULL);
 	total_len = ft_strlen(s1) + ft_strlen(s2);
 	if (!(res = malloc(sizeof(char) * (total_len + 1))))
 		return (NULL);

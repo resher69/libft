@@ -6,19 +6,21 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 19:14:10 by agardet           #+#    #+#             */
-/*   Updated: 2020/11/27 19:29:48 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2020/12/21 13:04:51 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char * restrict dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char * dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
 	j = 0;
+	if (!dst)
+		return((size_t)NULL);
 	while (src[j] != '\0')
 		j++;
 	if (dstsize == 0)
