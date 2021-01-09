@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 12:58:22 by agardet           #+#    #+#             */
-/*   Updated: 2020/12/21 17:08:03 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/09 14:52:12 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[begin] != '\0' && ft_strchr(set, s1[begin]))
 		begin++;
 	end = ft_strlen(s1);
-	while (end != begin && ft_strchr(set, s1[end]))
+	while (end != begin && ft_strchr(set, s1[end - 1]))
 		end--;
-	if (!(result = ft_calloc(((end - begin) + 2), sizeof(char))))
+	if (!(result = ft_calloc(((end - begin) + 1), sizeof(char))))
 		return (NULL);
-	while (begin <= end)
+	while (begin < end)
 	{
 		result[i] = s1[begin];
 		begin++;

@@ -6,7 +6,7 @@
 #    By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 11:11:01 by agardet           #+#    #+#              #
-#    Updated: 2021/01/08 13:22:07 by agardet          ###   ########lyon.fr    #
+#    Updated: 2021/01/09 14:45:44 by agardet          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRCS	=	ft_memset.c\
 			ft_itoa.c\
 			ft_split.c\
 			ft_strncpy.c\
+			ft_strmapi.c\
 			\
 			ft_lstadd_back.c\
 			ft_lstadd_front.c\

@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 10:05:32 by agardet           #+#    #+#             */
-/*   Updated: 2021/01/08 11:36:49 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/09 15:45:38 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_lstadd_back(t_list **alst, t_list *new);
+
 #endif

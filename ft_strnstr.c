@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:42:16 by agardet           #+#    #+#             */
-/*   Updated: 2020/11/27 16:56:38 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/09 15:47:41 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	needle_size = ft_strlen(needle);
 	i = 0;
-	if (needle_size == 0 || len == 0)
+	if (needle_size == 0)
 		return ((char *)haystack);
+	if (len == 0)
+		return (0);
 	while (haystack[i] != '\0' && i + needle_size <= len)
 	{
 		if (ft_strncmp((char *)&haystack[i], needle, needle_size) == 0)
@@ -29,5 +31,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-
