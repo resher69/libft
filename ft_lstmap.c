@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/11 15:19:40 by agardet           #+#    #+#             */
-/*   Updated: 2021/01/11 16:49:56 by agardet          ###   ########lyon.fr   */
+/*   Created: 2021/01/11 16:52:08 by agardet           #+#    #+#             */
+/*   Updated: 2021/01/11 17:58:48 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *new_lst;
+	t_list	*new;
 
-	new_lst = ft_lstnew();
+	if (!f || !del || !lst)
+		return (NULL);
+	new = ft_lstnew(lst);
 	while (lst)
 	{
-		new_lst->content = f(lst->content);
+		new->content = f(lst->content);
 		lst = lst->next;
+		ft_lstadd_back(&new, new);
 	}
-	return (new_lst);
 }
+
