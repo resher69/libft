@@ -11,7 +11,7 @@ static size_t	ft_count_words(char *s, char c)
 			i++;
 		while ((s[i] != c) && (s[i] != 0))
 			i++;
-		word_count++;
+		sep_count++;
 	}
 	return (word_count);
 }
