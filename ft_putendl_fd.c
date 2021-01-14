@@ -6,15 +6,17 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 20:33:51 by agardet           #+#    #+#             */
-/*   Updated: 2020/12/21 13:01:57 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/14 10:27:11 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	if (s)
+	{
 		write(fd, s, ft_strlen(s));
 		write(fd, "\n", 1);
+	}
 }

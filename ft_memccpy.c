@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 00:18:09 by agardet           #+#    #+#             */
-/*   Updated: 2020/12/08 14:00:24 by kali             ###   ########lyon.fr   */
+/*   Updated: 2021/01/14 10:25:31 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	unsigned char	*ptr_src;
 	size_t			i;
 
+	if (!dst || !src)
+		return (NULL);
 	i = 0;
 	ptr_dst = (unsigned char *)dst;
 	ptr_src = (unsigned char *)src;
@@ -27,7 +29,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		if (ptr_src[i] == (unsigned char)c)
 		{
 			i++;
-			return ((unsigned char *)&ptr_dst[i]);
+			return ((void *)&ptr_dst[i]);
 		}
 		i++;
 	}

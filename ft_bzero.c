@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 23:51:08 by agardet           #+#    #+#             */
-/*   Updated: 2020/11/27 11:37:57 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/14 10:13:28 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
+	if (!s)
+		return ;
 	ft_memset(s, 0, n);
 }
