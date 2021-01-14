@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 13:51:26 by kali              #+#    #+#             */
-/*   Updated: 2021/01/14 10:43:43 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/14 15:10:19 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	int		i;
 	size_t	j;
 	char	*str;
 
 	if (!s)
 		return (NULL);
+	if (start >= ft_strlen(s))
+	{
+		if (!(str = (char *)calloc(sizeof(*s), 1)))
+			return (NULL);
+		*str = 0;
+		return (str);
+	}
 	if (len > ft_strlen(&s[start]))
 		len = ft_strlen(&s[start]);
 	str = (char *)malloc(sizeof(*s) * (len + 1));
 	if (!str)
 		return (NULL);
-	i = start;
-	j = 0;
-	while (s[i])
-	{
+	i = start - 1;
+	while (s[++i])
 		if (j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
-		i++;
-	}
+			str[j++] = s[i];
 	str[j] = 0;
 	return (str);
 }

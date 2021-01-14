@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 19:57:37 by agardet           #+#    #+#             */
-/*   Updated: 2021/01/14 12:02:45 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/14 15:07:48 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *nptr)
 {
-	unsigned int	n;
-	int				neg;
+	long long	n;
+	int			neg;
 
 	neg = 1;
 	if (!nptr)

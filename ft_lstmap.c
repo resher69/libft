@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:52:08 by agardet           #+#    #+#             */
-/*   Updated: 2021/01/14 10:23:59 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/14 15:07:05 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*buffer;
 	t_list	*cpy;
 
-	if (!f || !lst || !del)
+	if (!f || !lst)
 		return (NULL);
 	if (!(buffer = ft_lstnew(f(lst->content))))
 		return (NULL);
