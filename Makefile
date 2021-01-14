@@ -6,7 +6,7 @@
 #    By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 11:11:01 by agardet           #+#    #+#              #
-#    Updated: 2021/01/13 16:21:45 by agardet          ###   ########lyon.fr    #
+#    Updated: 2021/01/14 13:47:20 by agardet          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,7 +78,7 @@ $(NAME):	$(OBJS)
 
 HEADER = libft.h
 
-%.o:		%.c
+%.o:		%.c				$(HEADER)
 			gcc $(FLAGS) -I $(HEADER) -o $@ -c $<
 
 all:		$(NAME)

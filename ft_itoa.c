@@ -6,12 +6,11 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 11:28:11 by agardet           #+#    #+#             */
-/*   Updated: 2021/01/14 12:17:58 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/14 13:21:09 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	ft_len_number(int n)
 {
