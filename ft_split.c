@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 11:08:37 by agardet           #+#    #+#             */
-/*   Updated: 2021/01/14 15:06:40 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/14 15:12:05 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char			**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	i = 0;
-	if (!(strs_split = ft_calloc(sizeof(char *), (count_sep(s, c)+ 1))))
+	if (!(strs_split = ft_calloc(sizeof(char *), (count_sep(s, c) + 1))))
 		return (NULL);
 	while (*s)
 	{
