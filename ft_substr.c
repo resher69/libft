@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 13:51:26 by kali              #+#    #+#             */
-/*   Updated: 2021/01/14 15:15:27 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/14 14:55:51 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (start >= ft_strlen(s))
 	{
-		if (!(str = (char *)calloc(sizeof(*s), 1)))
+		if (!(str = (char *)ft_calloc(sizeof(*s), 1)))
 			return (NULL);
 		*str = 0;
 		return (str);

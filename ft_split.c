@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 11:08:37 by agardet           #+#    #+#             */
-/*   Updated: 2021/01/14 15:12:05 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/15 14:51:34 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,23 @@ static size_t	count_sep(const char *s, char c)
 {
 	size_t	i;
 	size_t	nb_sep;
-	size_t	is_separator;
+	char	*s_cpy;
 
+	s_cpy = (char *)s;
 	i = 0;
 	nb_sep = 0;
-	while (s[i])
+	while (s_cpy[i])
 	{
-		is_separator = 0;
-		while ((s[i] == c) && (s[i] != 0))
-		{
-			is_separator = 1;
+		while ((s_cpy[i] == c) && (s_cpy[i]))
 			i++;
-		}
-		while ((s[i] != c) && (s[i] != 0))
+		while ((s_cpy[i] != c) && (s_cpy[i]))
 			i++;
-		if (is_separator == 1 && s[i] != 0)
+		if (s_cpy[i] == c && (s_cpy[i]))
+			nb_sep++;
+		if (s_cpy[i - 1] != c && (s_cpy[i] == 0))
 			nb_sep++;
 	}
-	return (nb_sep == 0 ? 1 : nb_sep);
+	return (nb_sep);
 }
 
 static char		*strs_len(const char *s, char c)
@@ -71,9 +70,9 @@ char			**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	i = 0;
 	if (!(strs_split = ft_calloc(sizeof(char *), (count_sep(s, c) + 1))))
 		return (NULL);
+	i = 0;
 	while (*s)
 	{
 		while (*s && *s == c)
