@@ -6,7 +6,7 @@
 #    By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 11:11:01 by agardet           #+#    #+#              #
-#    Updated: 2021/01/14 13:47:20 by agardet          ###   ########lyon.fr    #
+#    Updated: 2021/01/18 14:25:41 by agardet          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@
 				ft_strtrim.c\
 				ft_itoa.c\
 				ft_split.c\
+				ft_strndup.c\
 				ft_strncpy.c\
 				ft_strmapi.c
 			
@@ -72,9 +73,6 @@ NAME	=	libft.a
 $(NAME):	$(OBJS)
 			ar -rc $(NAME) $(OBJS)
 			ranlib $(NAME)
-
-
-
 
 HEADER = libft.h
 

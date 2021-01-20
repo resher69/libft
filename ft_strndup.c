@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/27 12:38:46 by agardet           #+#    #+#             */
-/*   Updated: 2021/01/18 14:26:28 by agardet          ###   ########lyon.fr   */
+/*   Created: 2021/01/18 10:49:40 by agardet           #+#    #+#             */
+/*   Updated: 2021/01/18 13:33:38 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strndup(char *src, size_t size)
 {
-	void *s;
+	char	*dst;
+	size_t	i;
 
-	if (!(s = malloc(count * size)))
+	if (!src)
 		return (NULL);
-	ft_bzero(s, count * size);
-	return (s);
+	if (!(dst = (char *)ft_calloc(sizeof(char), (size + 1))))
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	return (dst);
 }

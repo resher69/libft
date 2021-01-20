@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 11:08:37 by agardet           #+#    #+#             */
-/*   Updated: 2021/01/15 14:51:34 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/18 14:16:24 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,6 @@ static size_t	count_sep(const char *s, char c)
 	return (nb_sep);
 }
 
-static char		*strs_len(const char *s, char c)
-{
-	size_t	i;
-	char	*str_calloc;
-
-	i = 0;
-	while ((s[i] != c) && s[i])
-		i++;
-	if (!(str_calloc = ft_calloc(sizeof(char), (i + 1))))
-		return (NULL);
-	return (str_calloc);
-}
-
 static char		**free_tab(char **strs)
 {
 	size_t	i;
@@ -68,10 +55,11 @@ char			**ft_split(char const *s, char c)
 	char	*start;
 	size_t	i;
 
-	if (!s)
+	if ((!s) || !(strs_split = ft_calloc(sizeof(char *),
+											(count_sep(s, c) + 1))))
 		return (NULL);
-	if (!(strs_split = ft_calloc(sizeof(char *), (count_sep(s, c) + 1))))
-		return (NULL);
+	if ((count_sep(s, c) == 0))
+		return (strs_split);
 	i = 0;
 	while (*s)
 	{
@@ -80,11 +68,9 @@ char			**ft_split(char const *s, char c)
 		start = (char *)s;
 		while (*s && *s != c)
 			s++;
-		if (!(strs_split[i] = strs_len(start, c)))
-			return (free_tab(strs_split));
-		ft_strncpy(strs_split[i], start, s - start);
 		if (start != s)
-			i++;
+			if (!(strs_split[i++] = ft_strndup(start, (s - start))))
+				return (free_tab(strs_split));
 	}
 	strs_split[i] = NULL;
 	return (strs_split);
